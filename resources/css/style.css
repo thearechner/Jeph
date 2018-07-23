@@ -1,0 +1,29 @@
+/* Universal styles */
+html {
+  font-size: 24px;
+  /* background gradient - not sure if width/height need to be set otherwise. Maybe try some scrolling jquery plugin. */
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: linear-gradient(to bottom, hsl(26,54%,77%), hsl(159,6%,57%));
+}
+
+body {
+
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  color: hsl(0, 100%, 100%);
+   /* can be treated like a fallback
+  background-color: red; */
+
+}
+
+
+/* Desktop styles */
+
+
+
+/* Tablet styles */
+
+/* Mobile styles */
