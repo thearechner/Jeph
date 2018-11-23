@@ -4,50 +4,135 @@ html {
   /* background gradient - not sure if width/height need to be set otherwise. Maybe try some scrolling jquery plugin. */
   width: 100%;
   height: auto;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background: linear-gradient(to bottom, hsl(26,54%,77%), hsl(159,6%,57%));
 }
 
 body {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   color: hsl(0, 100%, 100%);
-   /* can be treated like a fallback
-  background-color: red; */
+   /* can be treated like a fallback */
+  background-color: hsl(26,54%,77%);
+  /* This creates a static gradient down the lenght of the page */
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background: linear-gradient(to bottom, hsl(26,54%,77%), hsl(159,6%,57%)); */
+  transition: background-color 5s ease-in-out;
 }
 
-/* Don't display menu contents by default */
-.menu {
-  display: none;
+
+/* New scrollMagic class to change color */
+
+body.changeColor {
+  background-color: hsl(159,6%,57%);
+  transition: background-color 5s ease-in-out;
 }
 
+/* New scrollMagic class to change background image */
+
+.background-image {
+  max-width:115%;
+  /* max-height:100%; */
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+  margin:auto;
+  transition: all 5s ease-in-out;
+  z-index: 5;
+  position: fixed;
+  opacity: 0;
+}
+
+.background-image.changeImage {
+  opacity: 1;
+  transition: all 2s ease-in-out;
+}
+
+/* Outer container */
 .outer-container {
-  max-width: 1024px;
-  margin: 2rem 3rem;
+  max-width: 1440px;
+  padding: 2rem 3rem;
   /* padding: ; */
   display: flex;
   /* justify-content: center; */
   /* flex-direction: row; */
+  z-index: 10;
+  position: absolute;
 }
 
+/* Video */
 
-/* Desktop styles */
-
-  /* For now don't display video section */
+/* For now don't display video section */
 .video {
   display: none;
 }
 
+
+/* Menu */
+
+/* Don't display menu contents by default */
+/* .menu {
+  display: none;
+} */
+
+.menu {
+  min-width: 6.5rem;
+  font-size: 1.5rem;
+  color: hsl(0, 0%, 0%);
+}
+
+.menu li {
+  padding: 0 1rem 1rem 0;
+}
+
+.menu-item {
+  display: none;
+}
+
+/* Main content */
+
+.container {
+  padding: 1rem;
+}
+
+/* Default (Large) */
 p,
 h2 {
   font-size: 2.5rem;
+  line-height: 3rem;
 }
 
 h2 {
-  color: hsl(0, 0%, 0%);
   padding: 2rem 0;
+  color: hsl(0, 0%, 0%);
 }
-/* Tablet styles */
 
-/* Mobile styles */
+/* Medium */
+@media only screen and (max-width: 1024px) {
+  p,
+  h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+  .background-image {
+    display: none;
+  }
+}
+
+/* small */
+@media only screen and (max-width: 768px) {
+  p,
+  h2 {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+  .background-image {
+    display: none;
+  }
+}
+
+/* Footer */
+
+footer {
+  font-size: 0.5rem;
+  padding: 1rem 0;
+  color: hsl(0, 0%, 0%);
+}

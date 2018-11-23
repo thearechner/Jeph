@@ -23,16 +23,21 @@
       </video>
       <h1>Jeph Ko</h1>
     </div>
+    <!-- Tokyo background image -->
+    <img class="background-image" src="resources/assets/Background_image.png" alt="tokyo background image">
+
     <!-- This is the outer most flex container, the menu and the page sections
     nest inside it -->
     <div class="outer-container" role="presentation">
       <!-- Menu (one box in the outter most flex container)-->
       <nav>
+        <!-- This is the open/close link -->
         <img src=""/>
         <ul class="menu" role="menu">
-          <li>Blog</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>_</li> <!-- Temporary open/close link -->
+          <li class="menu-item">Blog</li>
+          <li class="menu-item">About</li>
+          <li class="menu-item">Contact</li>
         </ul>
       </nav>
 
@@ -44,11 +49,11 @@
         <section>
 
           <div class="box feature-text" role="presentation">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempor
+            <p class="intro-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempor
             tortor vel leo porta semper. Aliquam augue mi, pharetra ac magna sit amet,
             mollis rhoncus lectus. Nam efficitur eleifend tempus. Vestibulum non dui
-            mauris. Nullam dignissim interdum magna, id sodales odio porta sit amet.<br><br>
-
+            mauris. Nullam dignissim interdum magna, id sodales odio porta sit amet.<br><br></p>
+            <p class="second-paragraph">
             Morbi semper mollis fermentum. Proin pharetra eleifend felis. Morbi a
             augue non nulla eleifend accumsan nec nec ex. Aliquam rhoncus facilisis
             purus, in viverra risus semper non.mauris finibus, et luctus lectus
@@ -82,11 +87,16 @@
         </section>
 
         <!-- Footer -->
-        <footer>Site by Thea Rechner</footer>
+        <footer></footer>
 
       </div>
 
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <script src="resources/JS/main.js"></script>
   </body>
 </html>
