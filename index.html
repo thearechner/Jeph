@@ -4,11 +4,6 @@
     <meta charset="utf-8">
     <title>Jeph Ko</title>
     <link rel="stylesheet" href="resources/css/reset.css">
-    <!-- Check if this is the right version of bootstrap-->
-    <!-- <link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous"> -->
     <link rel="stylesheet" href="resources/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400" rel="stylesheet">
   </head>
@@ -45,33 +40,37 @@
 
       <div class="container page-content" role="presentation">
         <!-- Main feature text -->
-        <section>
-
-          <div class="box feature-text" role="presentation">
             <!-- <div class="background-image">
               <img src="resources/assets/cat.jpg" alt="cat" class="thumbnail" id="cat" style="left: -100px; top: -200px;">
             </div> -->
-            <p class="intro-paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempor
-            tortor vel leo porta semper. Aliquam augue mi, pharetra ac magna sit amet,
-            mollis rhoncus lectus. Nam efficitur eleifend tempus.
-            <span class="image-link"><span>Vestibulum</span>
-              <!-- <img src="resources/assets/cat.jpg" alt="cat" class="thumbnail" id="cat" style="left: -100px; top: -200px;"> -->
-            </span> on dui mauris. Nullam dignissim interdum magna, id sodales odio porta sit amet.<br><br></p>
+            <div class="image-text-container" id="cat">
+              <!-- <img src="resources/assets/cat.jpg" alt="cat" class="thumbnail" id="cat"> -->
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempor
+                tortor vel leo porta semper. Aliquam augue mi, pharetra ac magna sit amet,
+                mollis rhoncus lectus. Nam efficitur eleifend tempus. On dui mauris. Nullam dignissim interdum magna, id sodales odio porta sit amet.<br><br></p>
+            </div>
 
-            <p>Fusce feugiat, tortor in facilisis pretium, velit felis ullamcorper neque, sit amet luctus felis est id erat. Nam nibh urna, auctor ut massa at, interdum ornare lectus. Fusce vulputate orci at scelerisque mollis. <a href="#">Praesent at ante quis sem porta finibus.</a> Fusce nulla nunc, pulvinar id vestibulum eu, suscipit ac lacus. Nulla facilisi. Aliquam et sem nunc. Proin pellentesque est ac ipsum gravida ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<br><br>
-            </p>
-            <p class="trigger-image">
-            Morbi semper mollis fermentum. Proin pharetra eleifend felis. Morbi a
-            augue non nulla <a href="#">eleifend accumsan</a> nec nec ex. Aliquam rhoncus facilisis
-            purus, in viverra risus semper non.mauris finibus, et luctus lectus
-            placerat. <br><br>
+            <div class="image-text-container" id="building">
+              <p>Fusce feugiat, tortor in facilisis pretium, velit felis ullamcorper neque, sit amet luctus felis est id erat. Nam nibh urna, auctor ut massa at, interdum ornare lectus. Fusce vulputate orci at scelerisque mollis. Praesent at ante quis sem porta finibus. Fusce nulla nunc, pulvinar id vestibulum eu, suscipit ac lacus. Nulla facilisi. Aliquam et sem nunc. Proin pellentesque est ac ipsum gravida ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<br><br>
+              </p>
+            </div>
 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempor
-            tortor vel leo porta semper. Aliquam augue mi, pharetra ac magna sit amet,
-            mollis rhoncus lectus. Nam efficitur eleifend tempus.</p>
-          </div>
-        </section>
+            <div class="image-text-container">
+              <p class="trigger-image"> <!-- class that sets trigger for scrollMagic image / bg color change -->
+              Morbi semper mollis fermentum. Proin pharetra eleifend felis. Morbi a
+              augue non nulla eleifend accumsan nec nec ex. Aliquam rhoncus facilisis
+              purus, in viverra risus semper non.mauris finibus, et luctus lectus
+              placerat.<br><br>
+              </p>
+            </div>
+
+            <div class="image-text-container" id="snow">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempor
+              tortor vel leo porta semper. Aliquam augue mi, pharetra ac magna sit amet,
+              mollis rhoncus lectus. Nam efficitur eleifend tempus.</p>
+            </div>
+
 
         <!-- About section -->
         <section>
@@ -98,6 +97,7 @@
         <footer></footer>
 
       </div>
+
 
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"

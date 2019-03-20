@@ -1,7 +1,6 @@
 /* Universal styles */
 html {
   font-size: 24px;
-  /* background gradient - not sure if width/height need to be set otherwise. Maybe try some scrolling jquery plugin. */
   width: 100%;
   height: auto;
 }
@@ -41,9 +40,9 @@ body.changeColor {
   top:0; left:0; right:0; bottom:0;
   margin:auto;
   transition: all 5s ease-in-out;
-  /* z-index: 1; */
   position: fixed;
   opacity: 0;
+  z-index: -2;
 }
 
 .background-image.changeImage {
@@ -64,49 +63,95 @@ body.changeColor {
 
 /* Linked images - as Background-image element behind paragraph*/
 
-/* .intro-paragraph .image-link {
-  background-image: url("../assets/cat.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-} */
-/* .background-image {
-  display: inline-block;
-  position: relative;
-  background-image: url("../assets/cat.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-} */
 
+@media only screen and (min-width: 1024px) {
+  #cat {
+    background-image:url("../assets/cat.jpg");
+  }
 
-/* Linked images - as img element in span*/
+  #building {
+    background-image: url("../assets/building.jpg");
+  }
 
-.image-link {
-  display: inline-block;
-  position: relative;
+  #snow {
+    background-image: url("../assets/snow.jpg");
+  }
+
+  .image-text-container#p{
+    z-index: 2;
+  }
+
+  .image-text-container {
+    background-size: 0 0;
+    /* z-index: 1; */
+  }
+
+  #cat.image-text-container::before {
+    background-image: inherit;
+    background-repeat: no-repeat;
+    opacity: 0;
+    background-size: contain;
+    height: 500px;
+    width: 500px;
+    top: 3%;
+    left: 30%;
+    content: '';
+    z-index: -1;
+    position: absolute;
+    transition: opacity 0.6s;
+  }
+
+  #cat.image-text-container:hover::before {
+    opacity: 1;
+  }
+
+  #building.image-text-container::before {
+    background-image: inherit;
+    background-repeat: no-repeat;
+    opacity: 0;
+    background-size: contain;
+    height: 700px;
+    width: 500px;
+    top: 20%;
+    right: 30%;
+    content: '';
+    z-index: -1;
+    position: absolute;
+    transition: opacity 0.6s;
+  }
+
+  #building.image-text-container:hover::before {
+    opacity: 1;
+  }
+
+  #snow.image-text-container::before {
+    background-image: inherit;
+    background-repeat: no-repeat;
+    opacity: 0;
+    background-size: contain;
+    height: 600px;
+    width: 500px;
+    top: 50%;
+    left: 20%;
+    content: '';
+    z-index: -1;
+    position: absolute;
+    transition: opacity 0.6s;
+  }
+
+  #snow.image-text-container:hover::before {
+    opacity: 1;
+  }
+
 }
 
-.image-link img {
-  /* display: none; */
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.6s;
-}
 
-.image-link:hover img {
-  opacity: 0;
-  z-index: 5;
-}
-
-.image-link:hover span {
-  z-index: 10;
-}
 /* Video */
 
 /* For now don't display video section */
 .video {
   display: none;
 }
-
 
 /* Menu */
 
@@ -159,7 +204,7 @@ h2 {
   }
 }
 
-/* small */
+/* Small */
 @media only screen and (max-width: 768px) {
   p,
   h2 {
