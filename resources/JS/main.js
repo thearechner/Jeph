@@ -1,5 +1,17 @@
+// Nav menu
+	// Open when someone clicks on the span element
+	function openNav() {
+  	document.getElementById("nav").style.height = "100%";
+	}
+
+	// Close when someone clicks on the "x" symbol inside the overlay
+	function closeNav() {
+  	document.getElementById("nav").style.height = "0%";
+	}
+
 $(document).ready(function(){
 
+// Background gradient and image
   // Init ScrollMagic
 	var controller = new ScrollMagic.Controller();
 

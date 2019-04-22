@@ -24,6 +24,18 @@ a,
   color: hsl(0, 100%, 100%);
 }
 
+/* Default (Large) */
+p,
+h2 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+h2 {
+  padding: 2rem 0;
+  color: hsl(0, 0%, 0%);
+}
+
 /* New scrollMagic class to change color */
 
 body.changeColor {
@@ -61,6 +73,7 @@ body.changeColor {
   position: absolute;
 }
 
+
 /* Linked images - as Background-image element behind paragraph*/
 
 
@@ -94,7 +107,7 @@ body.changeColor {
     height: 500px;
     width: 500px;
     top: 3%;
-    left: 30%;
+    left: 40%;
     content: '';
     z-index: -1;
     position: absolute;
@@ -113,7 +126,7 @@ body.changeColor {
     height: 700px;
     width: 500px;
     top: 20%;
-    right: 30%;
+    right: 40%;
     content: '';
     z-index: -1;
     position: absolute;
@@ -129,10 +142,10 @@ body.changeColor {
     background-repeat: no-repeat;
     opacity: 0;
     background-size: contain;
-    height: 600px;
+    height: 500px;
     width: 500px;
-    top: 50%;
-    left: 20%;
+    top: 51%;
+    left: 50%;
     content: '';
     z-index: -1;
     position: absolute;
@@ -141,6 +154,10 @@ body.changeColor {
 
   #snow.image-text-container:hover::before {
     opacity: 1;
+  }
+
+  nav {
+    display: none;
   }
 
 }
@@ -153,26 +170,6 @@ body.changeColor {
   display: none;
 }
 
-/* Menu */
-
-/* Don't display menu contents by default */
-/* .menu {
-  display: none;
-} */
-
-.menu {
-  min-width: 6.5rem;
-  font-size: 1.5rem;
-  color: hsl(0, 0%, 0%);
-}
-
-.menu li {
-  padding: 0 1rem 1rem 0;
-}
-
-.menu-item {
-  display: none;
-}
 
 /* Main content */
 
@@ -180,17 +177,6 @@ body.changeColor {
   padding: 1rem;
 }
 
-/* Default (Large) */
-p,
-h2 {
-  font-size: 2.5rem;
-  line-height: 3rem;
-}
-
-h2 {
-  padding: 2rem 0;
-  color: hsl(0, 0%, 0%);
-}
 
 /* Medium */
 @media only screen and (max-width: 1024px) {
@@ -199,9 +185,69 @@ h2 {
     font-size: 2rem;
     line-height: 2.4rem;
   }
+  h2 {
+    padding: 1rem 0;
+  }
   .background-image {
     display: none;
   }
+  .outer-container {
+    padding: .5rem 1.5rem;
+    top: 1rem;
+  }
+
+  /* Menu */
+  /* The Overlay (background) */
+  .overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS) */
+    height: 0;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: hsl(159,6%,57%); /* Fallback color */
+    background-color: hsl(159,6%,57%, 0.95); /* w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll*/
+    overflow-y: hidden; /* Disable vertical scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: left; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  /* The navigation links inside the overlay */
+  .overlay-content a {
+    padding: .5rem 2.6rem;
+    text-decoration: none;
+    font-size: 2.5rem;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: hsl(26,54%,77%);
+  }
+  /* Position the close button (top left corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: .5rem;
+    left: 2.6rem;
+    /* font-size: 2.5rem; */
+  }
+  .openbtn {
+    position: fixed;
+    top: .9rem;
+    left: 2.6rem;
+    font-size: 2rem;
+    font-weight: 300;
+    z-index: 1;
+  }
+
 }
 
 /* Small */
@@ -211,9 +257,15 @@ h2 {
     font-size: 1rem;
     line-height: 1.2rem;
   }
+  h2 {
+    padding: 0.5rem 0;
+  }
   .background-image {
     display: none;
   }
+  /* .outer-container {
+    padding: 0.5rem 1rem;
+  } */
 }
 
 /* Footer */
