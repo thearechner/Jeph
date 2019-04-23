@@ -9,7 +9,6 @@
   </head>
   <body>
 
-
     <!-- Video title screen -->
 
     <div class="video" role="presentation">
@@ -23,7 +22,7 @@
 
     <!-- Menu Overlay -->
     <nav>
-      <div id="nav" class="overlay">
+      <div id="nav" class="overlay" onclick="closeNav()">
         <!-- This is the open/close link -->
         <!-- Button to close the overlay navigation -->
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
@@ -35,13 +34,21 @@
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </div>
-
-
-
       </div>
+
       <!-- Element to open/show the overlay navigation menu -->
-      <img class="openbtn" onclick="openNav()" src="resources/assets/open_icon.svg" alt="open menu"/>
+      <a href="javascript:void(0)" class="openbtn" onclick="openNav()">
+        <img src="resources/assets/open_icon.svg" alt="open menu"/>
+      </a>
     </nav>
+
+    <!-- Scroll to next section -->
+    <a href="#about" class="scroll-down">
+      <img src="resources/assets/down_arrow.svg" alt="scroll down">
+    </a>
+    <!-- <div class="scroll-up">
+      <img src="resources/assets/up_arrow.svg" alt="scroll up">
+    </div> -->
 
 
     <!-- This is the outer most flex container, the page sections

@@ -3,6 +3,7 @@ html {
   font-size: 24px;
   width: 100%;
   height: auto;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -32,8 +33,16 @@ h2 {
 }
 
 h2 {
-  padding: 2rem 0;
+  padding: 2.5rem 0 1.5rem 0;
   color: hsl(0, 0%, 0%);
+}
+
+.scroll-down,
+.scroll-up {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1;
 }
 
 /* New scrollMagic class to change color */
@@ -186,7 +195,7 @@ body.changeColor {
     line-height: 2.4rem;
   }
   h2 {
-    padding: 1rem 0;
+    padding: 2rem 0 1rem 0;
   }
   .background-image {
     display: none;
@@ -207,7 +216,7 @@ body.changeColor {
     left: 0;
     top: 0;
     background-color: hsl(159,6%,57%); /* Fallback color */
-    background-color: hsl(159,6%,57%, 0.95); /* w/opacity */
+    /* background-color: hsl(159,6%,57%, 0.9); */ /* w/opacity */
     overflow-x: hidden; /* Disable horizontal scroll*/
     overflow-y: hidden; /* Disable vertical scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
@@ -218,7 +227,7 @@ body.changeColor {
     top: 25%; /* 25% from the top */
     width: 100%; /* 100% width */
     text-align: left; /* Centered text/links */
-    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+    margin-top: 2rem; /* 30px top margin to avoid conflict with the close button on smaller screens */
   }
   /* The navigation links inside the overlay */
   .overlay-content a {
@@ -241,10 +250,10 @@ body.changeColor {
   }
   .openbtn {
     position: fixed;
-    top: .9rem;
+    top: .7rem;
     left: 2.6rem;
-    font-size: 2rem;
-    font-weight: 300;
+    /* font-size: 2rem; */
+    /* font-weight: 300; */
     z-index: 1;
   }
 

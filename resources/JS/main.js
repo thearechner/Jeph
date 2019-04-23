@@ -9,6 +9,8 @@
   	document.getElementById("nav").style.height = "0%";
 	}
 
+
+
 $(document).ready(function(){
 
 // Background gradient and image
