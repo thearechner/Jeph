@@ -7,60 +7,63 @@
     <link rel="stylesheet" href="resources/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400" rel="stylesheet">
   </head>
+
   <body>
 
     <!-- Video title screen -->
-
     <div class="video" role="presentation">
       <video src="videofile.ogg" autoplay poster="posterimage.jpg">
 
       </video>
       <h1>Jeph Ko</h1>
     </div>
+
+
     <!-- Tokyo background image -->
     <img class="background-image" src="resources/assets/Background_image.png" alt="tokyo background image">
 
-    <!-- Menu Overlay -->
+
+    <!-- Nav menu -->
     <nav>
+      <!-- Element to open/show the overlay navigation menu -->
+      <a href="javascript:void(0)" class="openbtn" onclick="openNav()">
+        <img src="resources/assets/open_icon.svg" alt="open menu"/>
+      </a>
+
+      <!-- Nav menu overlay -->
       <div id="nav" class="overlay" onclick="closeNav()">
-        <!-- This is the open/close link -->
+
         <!-- Button to close the overlay navigation -->
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
           <img src="resources/assets/close_icon.svg" alt="close menu">
         </a>
+
         <!-- Overlay content -->
         <div class="overlay-content">
           <a href="#">Blog</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </div>
+
       </div>
 
-      <!-- Element to open/show the overlay navigation menu -->
-      <a href="javascript:void(0)" class="openbtn" onclick="openNav()">
-        <img src="resources/assets/open_icon.svg" alt="open menu"/>
-      </a>
     </nav>
 
+
     <!-- Scroll to next section -->
-    <a href="#about" class="scroll-down">
-      <img src="resources/assets/down_arrow.svg" alt="scroll down">
+    <a href="#about" class="scroll">
+      <img src="resources/assets/down_arrow.svg" alt="scroll down" class="scroll-down">
+      <img src="resources/assets/up_arrow.svg" alt="scroll up" class="scroll-up hidden">
     </a>
-    <!-- <div class="scroll-up">
-      <img src="resources/assets/up_arrow.svg" alt="scroll up">
-    </div> -->
 
 
     <!-- This is the outer most flex container, the page sections
     nest inside it -->
     <div class="outer-container" role="presentation">
 
-      <!-- Page content (one box in the outer most flex container, also another
-      container for the page sections inside it)-->
 
-
-      <div class="container page-content" role="presentation">
-        <!-- Main feature text -->
+      <!-- Text section -->
+      <section class="text">
             <div class="image-text-container" id="cat">
               <!-- <img src="resources/assets/cat.jpg" alt="cat" class="thumbnail" id="cat"> -->
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempor
@@ -90,10 +93,12 @@
               </p>
             </div>
 
+      </section>
+
 
         <!-- About section -->
         <section id="about">
-          <div class="box about" role="presentation">
+          <div class="about" role="presentation">
             <h2>About</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempor
             tortor vel leo porta semper. Aliquam augue mi, pharetra ac magna sit amet,
@@ -102,29 +107,34 @@
             Morbi semper mollis fermentum. Proin pharetra eleifend felis.<br><br>
             </p>
           </div>
+
         </section>
+
 
         <!-- Contact section -->
         <section id="contact">
-          <div class="box contact" role="presentation">
+          <div class="contact" role="presentation">
             <h2>Contact</h2>
             <p>email&commat;gmail.com</p>
             <p>Facebook / Instagram</p>
           </div>
+
         </section>
+
 
         <!-- Footer -->
         <footer></footer>
 
-      </div>
-
 
     </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
     <script src="resources/JS/main.js"></script>
+
   </body>
+
 </html>

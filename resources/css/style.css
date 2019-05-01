@@ -1,10 +1,16 @@
-/* Universal styles */
+/*
+===============================================================================
+UNIVERSAL STYLES
+===============================================================================
+ */
+
 html {
   font-size: 24px;
   width: 100%;
   height: auto;
   scroll-behavior: smooth;
 }
+
 
 body {
   font-family: "Rubik", sans-serif;
@@ -19,41 +25,121 @@ body {
   transition: background-color 5s ease-in-out;
 }
 
+
+
+/*
+-------------------------------------------------------------------------------
+Page containers
+-------------------------------------------------------------------------------
+*/
+
+/* Default */
+.outer-container {
+  position: absolute;
+  max-width: 1440px;
+  padding: 1.5rem 2.5rem;
+  top: 1rem;
+}
+
+
+/* Large */
+@media only screen and (min-width: 992px) {
+
+  .outer-container {
+    padding: 2rem 4rem;
+  }
+
+}
+
+
+
+
+/*
+-------------------------------------------------------------------------------
+Text
+-------------------------------------------------------------------------------
+*/
+
+/* Small (default) */
+p,
+h2 {
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+h2 {
+  padding: 0.5rem 0;
+  color: hsl(0, 0%, 0%);
+}
+
 a,
 .image-link {
   text-decoration: underline;
   color: hsl(0, 100%, 100%);
 }
 
-/* Default (Large) */
-p,
-h2 {
-  font-size: 2.5rem;
-  line-height: 3rem;
+
+/* Medium */
+@media only screen and (min-width: 768px) {
+
+  p,
+  h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  h2 {
+    padding: 2rem 0 1rem 0;
+  }
+
 }
 
-h2 {
-  padding: 2.5rem 0 1.5rem 0;
-  color: hsl(0, 0%, 0%);
+
+/* Large */
+@media only screen and (min-width: 992px) {
+
+  p,
+  h2 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  h2 {
+    padding: 2.5rem 0 1.5rem 0;
+  }
+
 }
 
-.scroll-down,
-.scroll-up {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 1;
-}
+
+
+
+
+/*
+===============================================================================
+SCROLLMAGIC BACKGROUND
+===============================================================================
+*/
+
+/*
+-------------------------------------------------------------------------------
+Background colour change
+-------------------------------------------------------------------------------
+*/
 
 /* New scrollMagic class to change color */
-
 body.changeColor {
   background-color: hsl(159,6%,57%);
   transition: background-color 5s ease-in-out;
 }
 
-/* New scrollMagic class to change background image */
 
+
+/*
+-------------------------------------------------------------------------------
+Background image change
+-------------------------------------------------------------------------------
+*/
+
+/* New scrollMagic class to change background image */
 .background-image {
   max-width:115%;
   /* max-height:100%; */
@@ -71,41 +157,156 @@ body.changeColor {
   transition: all 2s ease-in-out;
 }
 
-/* Outer container */
-.outer-container {
-  max-width: 1440px;
-  padding: 2rem 3rem;
-  /* padding: ; */
-  display: flex;
-  /* justify-content: center; */
-  /* flex-direction: row; */
-  position: absolute;
+/* Don't show backround image on smaller screens */
+@media only screen and (max-width: 992px) {
+  .background-image {
+    display: none;
+  }
 }
 
 
-/* Linked images - as Background-image element behind paragraph*/
 
 
-@media only screen and (min-width: 1024px) {
-  #cat {
-    background-image:url("../assets/cat.jpg");
+
+/*
+===============================================================================
+VIDEO
+===============================================================================
+*/
+
+/* For now don't display video section */
+.video {
+  display: none;
+}
+
+
+
+
+
+/*
+===============================================================================
+NAVIGATION
+===============================================================================
+*/
+
+/*
+-------------------------------------------------------------------------------
+Full screen nav menu
+-------------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 992px) {
+  nav {
+    display: none;
+  }
+}
+
+
+/* Button to open overlay */
+.openbtn {
+  position: fixed;
+  top: .7rem;
+  left: 2.6rem;
+  /* font-size: 2rem; */
+  /* font-weight: 300; */
+  z-index: 1;
+}
+
+
+/* The overlay */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS) */
+  height: 0;
+  width: 100%;
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: hsl(159,6%,57%); /* Fallback color */
+  /* background-color: hsl(159,6%,57%, 0.9); */ /* w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll*/
+  overflow-y: hidden; /* Disable vertical scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+  /* Position the close button (top left corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: .5rem;
+    left: 2.6rem;
+    /* font-size: 2.5rem; */
   }
 
-  #building {
-    background-image: url("../assets/building.jpg");
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: left; /* Centered text/links */
+    margin-top: 2rem; /* 30px top margin to avoid conflict with the close button on smaller screens */
   }
 
-  #snow {
-    background-image: url("../assets/snow.jpg");
-  }
+    /* The navigation links inside the overlay */
+    .overlay-content a {
+      padding: .5rem 2.6rem;
+      text-decoration: none;
+      font-size: 2.5rem;
+      display: block; /* Display block instead of inline */
+      transition: 0.3s; /* Transition effects on hover (color) */
+    }
 
-  .image-text-container#p{
-    z-index: 2;
-  }
+    /* When you mouse over the navigation links, change their color */
+    .overlay a:hover, .overlay a:focus {
+      color: hsl(26,54%,77%);
+    }
+
+
+/*
+-------------------------------------------------------------------------------
+Page scrolling
+-------------------------------------------------------------------------------
+*/
+
+.scroll {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+/*
+===============================================================================
+MAIN TEXT CONTENT
+===============================================================================
+*/
+
+/*
+-------------------------------------------------------------------------------
+Linked images - as Background-image element behind paragraph
+-------------------------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 992px) {
 
   .image-text-container {
     background-size: 0 0;
-    /* z-index: 1; */
+  }
+
+    .image-text-container#p{
+      z-index: 2;
+    }
+
+
+  #cat {
+    background-image:url("../assets/cat.jpg");
   }
 
   #cat.image-text-container::before {
@@ -127,6 +328,11 @@ body.changeColor {
     opacity: 1;
   }
 
+
+  #building {
+    background-image: url("../assets/building.jpg");
+  }
+
   #building.image-text-container::before {
     background-image: inherit;
     background-repeat: no-repeat;
@@ -144,6 +350,11 @@ body.changeColor {
 
   #building.image-text-container:hover::before {
     opacity: 1;
+  }
+
+
+  #snow {
+    background-image: url("../assets/snow.jpg");
   }
 
   #snow.image-text-container::before {
@@ -165,119 +376,18 @@ body.changeColor {
     opacity: 1;
   }
 
-  nav {
-    display: none;
-  }
 
 }
 
 
-/* Video */
-
-/* For now don't display video section */
-.video {
-  display: none;
-}
 
 
-/* Main content */
 
-.container {
-  padding: 1rem;
-}
-
-
-/* Medium */
-@media only screen and (max-width: 1024px) {
-  p,
-  h2 {
-    font-size: 2rem;
-    line-height: 2.4rem;
-  }
-  h2 {
-    padding: 2rem 0 1rem 0;
-  }
-  .background-image {
-    display: none;
-  }
-  .outer-container {
-    padding: .5rem 1.5rem;
-    top: 1rem;
-  }
-
-  /* Menu */
-  /* The Overlay (background) */
-  .overlay {
-    /* Height & width depends on how you want to reveal the overlay (see JS) */
-    height: 0;
-    width: 100%;
-    position: fixed; /* Stay in place */
-    z-index: 10; /* Sit on top */
-    left: 0;
-    top: 0;
-    background-color: hsl(159,6%,57%); /* Fallback color */
-    /* background-color: hsl(159,6%,57%, 0.9); */ /* w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll*/
-    overflow-y: hidden; /* Disable vertical scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-  }
-  /* Position the content inside the overlay */
-  .overlay-content {
-    position: relative;
-    top: 25%; /* 25% from the top */
-    width: 100%; /* 100% width */
-    text-align: left; /* Centered text/links */
-    margin-top: 2rem; /* 30px top margin to avoid conflict with the close button on smaller screens */
-  }
-  /* The navigation links inside the overlay */
-  .overlay-content a {
-    padding: .5rem 2.6rem;
-    text-decoration: none;
-    font-size: 2.5rem;
-    display: block; /* Display block instead of inline */
-    transition: 0.3s; /* Transition effects on hover (color) */
-  }
-  /* When you mouse over the navigation links, change their color */
-  .overlay a:hover, .overlay a:focus {
-    color: hsl(26,54%,77%);
-  }
-  /* Position the close button (top left corner) */
-  .overlay .closebtn {
-    position: absolute;
-    top: .5rem;
-    left: 2.6rem;
-    /* font-size: 2.5rem; */
-  }
-  .openbtn {
-    position: fixed;
-    top: .7rem;
-    left: 2.6rem;
-    /* font-size: 2rem; */
-    /* font-weight: 300; */
-    z-index: 1;
-  }
-
-}
-
-/* Small */
-@media only screen and (max-width: 768px) {
-  p,
-  h2 {
-    font-size: 1rem;
-    line-height: 1.2rem;
-  }
-  h2 {
-    padding: 0.5rem 0;
-  }
-  .background-image {
-    display: none;
-  }
-  /* .outer-container {
-    padding: 0.5rem 1rem;
-  } */
-}
-
-/* Footer */
+/*
+===============================================================================
+FOOTER
+===============================================================================
+*/
 
 footer {
   font-size: 0.5rem;
