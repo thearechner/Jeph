@@ -267,18 +267,22 @@ Page scrolling
 -------------------------------------------------------------------------------
 */
 
-.scroll {
+.scroll-arrow {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
   z-index: 1;
 }
 
-.hidden {
-  display: none;
+.up {
+  transform: rotate(180deg);
+  transition: all 1s;
 }
 
-
+.down {
+  transform: rotate(360deg);
+  transition: all 1s;
+}
 
 
 

@@ -43,4 +43,52 @@ $(document).ready(function(){
   // }) // adds debug info
   .addTo(controller);
 
+
+
+// Scroll arrow
+
+	$(".scroll-arrow").on("click", event => {
+	  event.preventDefault();
+	  console.log("click");
+
+	  if ($(".current").hasClass("two")) {
+	    console.log("second last");
+
+	    const $next = $(".current").next(".section");
+
+	    $(".current").removeClass("current");
+	    $next.addClass("current");
+	    $("html, body").animate({
+	      scrollTop: $(".current").offset().top
+	    });
+
+	    $(".arrow").addClass("up");
+	    $(".arrow").removeClass("down");
+	  }
+
+	  else if ($(".current").hasClass("three")) {
+	    console.log("last");
+
+	    $(".current").removeClass("current");
+	    $(".one").addClass("current");
+	    $("html, body").animate({
+	      scrollTop: $(".current").offset().top
+	    });
+
+	    $(".arrow").addClass("down");
+	    $(".arrow").removeClass("up");
+	  }
+
+	  else {
+	    const $next = $(".current").next(".section");
+
+	    $(".current").removeClass("current");
+	    $next.addClass("current");
+	    $("html, body").animate({
+	      scrollTop: $(".current").offset().top
+	    });
+	  }
+
+	});
+
 });
